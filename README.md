@@ -58,3 +58,19 @@ AI-Electronics-Purchase-Advisor
 │
 └── images
     ├── app_demo.png
+
+
+```
+
+## Requirements.txt
+
+```
+streamlit
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+python-dotenv
+
+```
