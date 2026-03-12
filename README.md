@@ -33,7 +33,7 @@ Kaggle datasets
 
 ## Project Structure
 
-AI-Electronics-Purchase-Advisor
+```AI-Electronics-Purchase-Advisor
 │
 ├── app.py
 ├── requirements.txt
