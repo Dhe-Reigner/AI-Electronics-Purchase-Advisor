@@ -47,7 +47,7 @@ def recommend_product(device_type, budget, usage, camera_type, sensor_size, reso
     return recommended_product
  
 def main():
-    st.set_page_config(page_title="AI Electronics Purchase Advisor", page_icon=":camera:")
+    st.set_page_config(page_title="AI Electronics Purchase Advisor", page_icon=":camera:",layout='wide')
     st.title("📷 AI Electronics Purchase Advisor")
 
     st.markdown("""
