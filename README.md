@@ -32,3 +32,28 @@ Scikit-learn
 Kaggle datasets
 
 ## Project Structure
+
+AI-Electronics-Purchase-Advisor
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── datasets
+│   ├── cameras.csv
+│   ├── laptops.csv
+│   ├── phones.csv
+│
+├── models
+│   ├── recommender.py
+│   ├── comparison.py
+│
+├── notebooks
+│   ├── EDA.ipynb
+│
+├── reports
+│   ├── project_report.md
+│
+└── images
+    ├── app_demo.png
