@@ -68,23 +68,34 @@ def main():
 
 
     device_type = st.sidebar.selectbox("Device Type", ["Camera", "Laptop", "Phone"],key="device_type")
+
+    # Call preferences ONCE(this renders the sidebar widgets once)
+    camera_type = sensor_size = resolution = lens_type = lens_focal_length = lens_aperture = None
+    processor = memory = storage = screen_size = screen_resolution = camera_quality = battery_capacity = None
+    camera_quality = None
     
     if device_type == "Camera":
-        camera_preferences()
+        budget, usage, camera_type, sensor_size, resolution, lens_type, lens_focal_length, lens_aperture, battery_capacity = camera_preferences()
+        storage = screen_size = screen_resolution = None
     elif device_type == "Laptop":
-        laptop_preferences()
+        budget, usage, processor, memory, storage, screen_size, screen_resolution, battery_capacity = laptop_preferences()
+        camera_type = sensor_size = resolution = lens_type = lens_focal_length = lens_aperture = None
+        camera_quality = None
     elif device_type == "Phone":
-        phone_preferences()     
+        budget, usage, screen_size, screen_resolution, storage, camera_quality, battery_capacity = phone_preferences()     
+        camera_type = sensor_size = resolution = lens_type = lens_focal_length = lens_aperture = None
+        processor = memory = None
     if st.button('Generate Recommendation'):
         with st.spinner('Analyzing product datasets.....'):
-            if device_type == "Camera":
-                budget, usage, camera_type, sensor_size, resolution, lens_type, lens_focal_length, lens_aperture, battery_capacity = camera_preferences()
-            elif device_type == "Laptop":
-                budget, usage, processor, memory, storage, screen_size, screen_resolution, battery_capacity = laptop_preferences()
-            elif device_type == "Phone":
-                budget, usage, screen_size, screen_resolution, storage, camera_quality, battery_capacity = phone_preferences()
-
-            recommended_product = recommend_product(device_type, budget, usage, camera_type, sensor_size, resolution, lens_type, lens_focal_length, lens_aperture, processor, memory, storage, screen_size, screen_resolution, camera_quality, battery_capacity)
+            recommended_product = recommend_product(
+                device_type, 
+                budget, usage, camera_type, 
+                sensor_size, resolution,
+                lens_type, lens_focal_length, 
+                lens_aperture, processor, memory, 
+                storage, screen_size, screen_resolution,
+                camera_quality, battery_capacity
+            )
             st.success('Recommendation generated successfully!')
             st.write(f"Recommended Product: {recommended_product}")
 
