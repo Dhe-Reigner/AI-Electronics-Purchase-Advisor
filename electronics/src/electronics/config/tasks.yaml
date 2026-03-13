@@ -4,6 +4,7 @@ analyze_preferences:
     specifications needed to recommend a product.
   expected_output: >
     Structured list of required specifications.
+  agent: preference_agent
 
 market_research:
   description: >
@@ -11,16 +12,18 @@ market_research:
     products that match the user requirements.
   expected_output: >
     List of candidate products.
+  agent: market_agent
 
 review_analysis:
   description: >
     Evaluate reviews and ratings of the candidate products.
   expected_output: >
     Ranking of products based on reliability and performance.
+  agent: review_agent
 
 final_recommendation:
   description: >
     Produce the best product recommendation based on all insights.
   expected_output: >
     Final recommended product with explanation.
-    
+  agent: recommendation_agent
