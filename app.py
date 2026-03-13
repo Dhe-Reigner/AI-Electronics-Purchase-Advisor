@@ -1,6 +1,8 @@
 import pandas as pd
 import streamlit as st
-#from models.recommender import recommend_product
+from models.recommender import recommend_product
+from electronics.src.electronics.crew import Electronics
+from dotenv 
 
 
 

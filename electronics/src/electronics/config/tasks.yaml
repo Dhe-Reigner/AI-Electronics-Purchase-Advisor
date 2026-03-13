@@ -1,0 +1,26 @@
+analyze_preferences:
+  description: >
+    Analyze the user preferences and extract the important
+    specifications needed to recommend a product.
+  expected_output: >
+    Structured list of required specifications.
+
+market_research:
+  description: >
+    Use the product datasets and RAG knowledge base to identify
+    products that match the user requirements.
+  expected_output: >
+    List of candidate products.
+
+review_analysis:
+  description: >
+    Evaluate reviews and ratings of the candidate products.
+  expected_output: >
+    Ranking of products based on reliability and performance.
+
+final_recommendation:
+  description: >
+    Produce the best product recommendation based on all insights.
+  expected_output: >
+    Final recommended product with explanation.
+    
